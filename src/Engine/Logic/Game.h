@@ -4,17 +4,25 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <stdio.h>
+#include <vector>
+
 
 #include "../Graphics/DisplayManager.h"
 #include "../Graphics/Texture.h"
 
 
+class GameState; 
 class Game
 {
   public:
     Game();
     void Init(int width, int height);
-    void HandleEvents(Game* game);
+
+    void ChangeState(GameState* state); // new function
+	void PushState(GameState* state);  // new function
+	void PopState(); // new function
+
+    void HandleEvents();
     void Update();
     void Draw();
     void Quit();
@@ -23,5 +31,6 @@ class Game
 
   private:
     bool m_bRunning;
+    std::vector<GameState*> states;
 };
 #endif

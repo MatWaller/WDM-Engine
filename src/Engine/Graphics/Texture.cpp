@@ -5,7 +5,7 @@ SDL_Surface *image;
 SDL_Rect imageRect;
 
 void Texture::create(char* path, int width = NULL, int height = NULL){
-    free();
+    //free();
     int imgFlags = (IMG_INIT_PNG, IMG_INIT_JPG);
     if( !( IMG_Init( imgFlags ) & imgFlags ) ){
         SDL_Quit();
@@ -14,8 +14,7 @@ void Texture::create(char* path, int width = NULL, int height = NULL){
 
     image = IMG_Load(path);
     if(image == NULL){
-        SDL_Quit();
-        IMG_Quit();
+        printf("Unable to load image!");
     }
 
     // Making cyan which is red 0, green 255, blue 255 the transparent key.
