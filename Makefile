@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = src/main.cpp src/Engine/Graphics/DisplayManager.cpp src/Engine/Graphics/Texture.cpp src/Engine/Graphics/Ttf.cpp
+OBJS = src/main.cpp src/Engine/Graphics/DisplayManager.cpp src/Engine/Graphics/Texture.cpp src/Engine/Logic/Game.cpp
 #OBJ_NAME specifies the name of our exectuable
 OBJ_NAME = bin/SDL
 
